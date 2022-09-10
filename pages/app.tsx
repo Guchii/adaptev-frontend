@@ -1,7 +1,7 @@
-import type { NextPage } from "next";
 import { useState } from "react";
 import type { FC } from "react";
 import states from "../data/states.json";
+import Map from "../components/Map";
 
 enum Colors {
   error = "error",
@@ -31,11 +31,8 @@ const Predictions = () => {
           })}
         </select>
       </div>
-      <div className="flex w-full gap-4">
-        <div className="h-96 w-full bg-light rounded-3xl grid place-items-center">
-          <h2 className="text-black text-5xl">map will go here {state}</h2>
-        </div>
-        <div></div>
+      <div className="h-[400px] w-full bg-orange-300 rounded-3xl overflow-hidden">
+        <Map />
       </div>
       <div>
         <h2 className="text-4xl my-8">Statistics</h2>
