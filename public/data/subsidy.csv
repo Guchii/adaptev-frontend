@@ -1,0 +1,18 @@
+State,per kWh of battery capacity,Max subsidy,Road tax exemption
+Delhi,"Rs 5,000","Rs 30,000",100%
+Maharashtra,"Rs 5,000","Rs 25,000*",100%
+Meghalaya,"Rs 10,000","Rs 20,000",100%
+Gujarat,"Rs 10,000","Rs 20,000",50%
+Assam,"Rs 10,000","Rs 20,000",100%
+Bihar^,"Rs 10,000","Rs 20,000",100%
+West Bengal,"Rs 10,000","Rs 20,000",100%
+Rajasthan,"Rs 2,500","Rs 10,000",NA
+Odisha,NA,"Rs 5,000",100%
+Uttar Pradesh,No,No,100%
+Kerala,No,No,50%
+Karnataka,No,No,100%
+Tamil Nadu,No,No,100%
+Telangana,No,No,100%
+Madhya Pradesh,No,No,99%
+Andhra Pradesh,No,No,100%
+Punjab^,No,No,100%
