@@ -13,6 +13,7 @@ enum Colors {
 const Predictions = () => {
   const [state, setState] = useState("");
   const [value, setValue] = useState(0);
+  const [radialProgres, setRadialProgress] = useState(90);
   return (
     <section className="p-8">
       <div className="flex gap-4 mb-4">
@@ -35,17 +36,22 @@ const Predictions = () => {
         <Map />
       </div>
       <div>
-        <h2 className="text-4xl my-8">Statistics</h2>
-        <div className="flex gap-32 items-center">
+        <h2 className="my-8 text-4xl">Statistics</h2>
+        <div className="flex items-center gap-32">
           <div className="flex flex-col gap-4">
-            <ProgressBar color={Colors.accent} />
-            <ProgressBar color={Colors.success} />
-            <ProgressBar color={Colors.error} />
-            <ProgressBar />
+            <ProgressBar color={Colors.accent} title={"Price"} />
+            <ProgressBar color={Colors.success} title={"Efficiency"} />
+            <ProgressBar color={Colors.error} title={"Power"} />
           </div>
-          {/* @ts-ignore */}
-          <div className="radial-progress scale-150" style={{ "--value": 90 }}>
-            90%
+          <div
+            className="scale-150 radial-progress"
+            // @ts-ignore
+            style={{ "--value": radialProgres }}
+            onClick={() => {
+              setRadialProgress(Math.floor(Math.random() * 100));
+            }}
+          >
+            {radialProgres}%
           </div>
         </div>
       </div>
@@ -53,7 +59,10 @@ const Predictions = () => {
   );
 };
 
-const ProgressBar: FC<{ color?: Colors }> = ({ color = Colors.warning }) => {
+const ProgressBar: FC<{ color?: Colors; title?: string }> = ({
+  color = Colors.warning,
+  title = "FieldName",
+}) => {
   const returnRandom = () => Math.floor(Math.random() * 100);
   const [value, setValue] = useState(returnRandom());
   return (
@@ -62,7 +71,7 @@ const ProgressBar: FC<{ color?: Colors }> = ({ color = Colors.warning }) => {
         setValue(returnRandom());
       }}
     >
-      <span className="block">Price</span>
+      <span className="block">{title}</span>
       <progress
         className={`progress w-96 progress-${color}`}
         value={value}

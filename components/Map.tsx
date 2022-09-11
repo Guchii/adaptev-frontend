@@ -5,17 +5,8 @@ const geoUrl =
   "https://raw.githubusercontent.com/virengajera/india-topojson/main/mapdata/india.json";
 
 const Map: FC<{ position?: Array<number> }> = ({ position }) => {
-  return (
-    <ComposableMap projection={"geoAlbers"}>
-      <Geographies geography={geoUrl}>
-        {({ geographies }) =>
-          geographies.map((geo) => (
-            <Geography key={geo.rsmKey} geography={geo} />
-          ))
-        }
-      </Geographies>
-    </ComposableMap>
-  );
+  // return <iframe src="http://127.0.0.1:8050/india"></iframe>;
+  return null;
 };
 
 export default Map;

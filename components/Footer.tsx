@@ -1,9 +1,13 @@
+import Link from "next/link";
+
 const Footer = () => {
   return (
-    <footer className="footer p-10 bg-neutral text-neutral-content">
+    <footer className="p-10 footer bg-neutral text-neutral-content">
       <div>
-        <span className="footer-title">Electrix</span>
-        <a className="link link-hover">&copy; Very nice funny epic shit 2022</a>
+        <span className="footer-title">ADAPTEV</span>
+        <Link href={"/about"}>
+          <a className="link link-hover">september decodev project</a>
+        </Link>
       </div>
     </footer>
   );

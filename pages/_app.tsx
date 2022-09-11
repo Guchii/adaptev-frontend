@@ -11,8 +11,11 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <Nav />
-      {/* @ts-ignore */}
-      <main className="z-10 min-h-screen bg-dark text-light" ref={parent}>
+      <main
+        className="z-10 min-h-screen text-white select-none bg-dark"
+        // @ts-ignore
+        ref={parent}
+      >
         <Component {...pageProps} />
       </main>
       <Footer />
